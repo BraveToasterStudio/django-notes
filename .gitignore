@@ -1,7 +1,9 @@
 *.pyc
 .*.swp
 .installed.cfg
+.coverage
 bin
+!templates/bin
 develop-eggs
 dist
 *.egg-info

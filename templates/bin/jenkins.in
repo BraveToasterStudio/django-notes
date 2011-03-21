@@ -1,0 +1,9 @@
+#!/bin/sh
+
+BUILDOUT_ROOT=${buildout:directory}
+
+cd $BUILDOUT_ROOT
+./bin/django test --noinput --with-coverage --cover-package=django_notes --with-xcoverage --xcoverage-file=reports/coverage.xml --with-xunit --xunit-file=reports/nosetests.xml $@
+return_code=$?
+./bin/pylint --rcfile=pylintrc -f parseable django_notes > reports/pylint.report
+exit $return_code
