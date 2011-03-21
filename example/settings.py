@@ -49,14 +49,16 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
-    # Uncomment the next line to enable the admin:
-     'django.contrib.admin',
-    # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
+    'django.contrib.admin',
+
     'staticfiles',
-    'django_notes',
     'tinymce',
+    'django_nose',
+
+    'django_notes',
 )
+
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
 TINYMCE_JS_URL = os.path.join(STATIC_URL, "tiny_mce/tiny_mce.js")
 TINYMCE_DEFAULT_CONFIG = {'theme': "advanced", 'relative_urls': False}
